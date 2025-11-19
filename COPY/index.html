@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beautiful Frontend — Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --bg:linear-gradient(180deg,#0f172a 0%, #071025 60%);
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+      --accent:#7c3aed;
+      --muted:#9aa4b2;
+    }
+    html,body{height:100%;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    .frost{backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);} /* nice glass effect */
+    /* subtle entrance */
+    .appear{opacity:0; transform: translateY(10px); animation:appear .6s forwards ease-out}
+    @keyframes appear{to{opacity:1; transform:none}}
+    /* decorative gradient circle */
+    .halo{position:absolute; inset:auto auto -100px -100px; width:420px; height:420px; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.18), rgba(124,58,237,0.06) 40%, transparent 60%); filter: blur(40px); pointer-events:none}
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-slate-100">
+  <div class="relative overflow-hidden">
+    <div class="halo"></div>
+    <header class="container mx-auto flex items-center justify-between py-6 px-4 md:px-0">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-xl"> 
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+            <path d="M12 2L19 8V22H5V8L12 2Z" stroke="none" fill="white" opacity=".95"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold">Aurora UI</h1>
+          <p class="text-xs text-slate-400 -mt-0.5">Beautiful, minimal landing</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a class="hover:text-white transition">Features</a>
+        <a class="hover:text-white transition">Templates</a>
+        <a class="hover:text-white transition">Pricing</a>
+        <button id="cta" class="ml-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg hover:scale-105 transition-transform text-white">Get started</button>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 bg-white/6 rounded-lg frost">☰</button>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-0 mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section class="appear">
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Design delightful interfaces — fast.</h2>
+        <p class="mt-4 text-slate-300 max-w-xl">A clean, modern starter landing page with subtle motion, glass components, and responsive layout. Perfect for portfolios, product launches, or personal sites.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#" class="inline-flex items-center gap-2 bg-white text-slate-900 px-4 py-2 rounded-lg font-medium shadow hover:translate-y-[-2px] transition">Explore templates</a>
+          <a href="#" class="inline-flex items-center gap-2 border border-white/10 px-4 py-2 rounded-lg text-slate-200">View docs</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-3 gap-3 max-w-sm">
+          <div class="p-3 bg-gradient-to-br from-white/6 to-white/3 rounded-xl frost shadow-inner">
+            <p class="text-xs text-slate-300">Deploys</p>
+            <p class="text-lg font-semibold">120+</p>
+          </div>
+          <div class="p-3 bg-gradient-to-br from-white/6 to-white/3 rounded-xl frost shadow-inner">
+            <p class="text-xs text-slate-300">Components</p>
+            <p class="text-lg font-semibold">48</p>
+          </div>
+          <div class="p-3 bg-gradient-to-br from-white/6 to-white/3 rounded-xl frost shadow-inner">
+            <p class="text-xs text-slate-300">Templates</p>
+            <p class="text-lg font-semibold">15</p>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="appear">
+        <div class="bg-gradient-to-br from-white/5 to-white/2 rounded-2xl p-6 shadow-2xl border border-white/6">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-slate-300">Try the preview</p>
+              <h3 class="font-semibold text-xl">Interactive card</h3>
+            </div>
+            <div class="text-slate-400 text-xs">Live</div>
+          </div>
+
+          <div class="mt-6 bg-gradient-to-b from-slate-800 to-slate-900 p-4 rounded-lg">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-500 flex items-center justify-center">🚀</div>
+              <div>
+                <p class="text-sm text-slate-300">Feature</p>
+                <p class="font-medium">Lightning-fast builds</p>
+              </div>
+            </div>
+
+            <div class="mt-4 text-slate-400 text-sm">Customize this card to show important product metrics, release notes, or a mini-demo. It adapts to light/dark backgrounds and scales nicely on mobile.</div>
+
+            <div class="mt-4 flex gap-2">
+              <button class="px-3 py-1 rounded-md bg-white/6 text-slate-200">Share</button>
+              <button class="px-3 py-1 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 text-white">Open</button>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+    </main>
+
+    <section class="container mx-auto px-4 md:px-0 mt-12">
+      <h3 class="text-xl font-semibold mb-4">Popular templates</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 shadow-lg hover:shadow-xl transition hover:scale-105">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="font-semibold">Product landing</h4>
+              <p class="text-sm text-slate-400 mt-1">Launch your product with style — pricing, FAQs, and CTAs included.</p>
+            </div>
+            <div class="text-slate-300 text-sm">Free</div>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <span class="px-2 py-1 text-xs rounded bg-white/3">React</span>
+            <span class="px-2 py-1 text-xs rounded bg-white/3">Tailwind</span>
+            <span class="px-2 py-1 text-xs rounded bg-white/3">HTML</span>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 shadow-lg hover:shadow-xl transition hover:scale-105">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="font-semibold">Portfolio</h4>
+              <p class="text-sm text-slate-400 mt-1">Showcase work with a beautiful gallery and case studies.</p>
+            </div>
+            <div class="text-slate-300 text-sm">$5</div>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <span class="px-2 py-1 text-xs rounded bg-white/3">Vue</span>
+            <span class="px-2 py-1 text-xs rounded bg-white/3">Animations</span>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-white/4 to-white/2 border border-white/6 shadow-lg hover:shadow-xl transition hover:scale-105">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="font-semibold">Docs</h4>
+              <p class="text-sm text-slate-400 mt-1">Clean documentation site with search & versioning.</p>
+            </div>
+            <div class="text-slate-300 text-sm">Pro</div>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <span class="px-2 py-1 text-xs rounded bg-white/3">MDX</span>
+            <span class="px-2 py-1 text-xs rounded bg-white/3">Algolia</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <footer class="mt-16 border-t border-white/6 py-8">
+      <div class="container mx-auto px-4 md:px-0 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-slate-400">© 2025 Aurora UI • Crafted with care</div>
+        <div class="flex items-center gap-4 text-slate-300 text-sm">
+          <a>Privacy</a>
+          <a>Terms</a>
+          <a>Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // small UI interactions
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // simple appear animation stagger
+      document.querySelectorAll('.appear').forEach((el,i)=>{ el.style.animationDelay = (i*120)+'ms' })
+
+      // mobile menu (very small demo)
+      const menuBtn = document.getElementById('menuBtn');
+      if(menuBtn){
+        menuBtn.addEventListener('click', ()=>{
+          alert('Mobile menu demo — integrate your own menu here.');
+        })
+      }
+
+      // CTA pulse
+      const cta = document.getElementById('cta');
+      if(cta){
+        setInterval(()=>{ cta.animate([{transform:'scale(1)'},{transform:'scale(1.03)'},{transform:'scale(1)'}],{duration:2400}) },4200)
+      }
+    })
+  </script>
+</body>
+</html>
