@@ -1,5 +1,5 @@
 FROM almalinux:9 
-RUN cd /app 
+RUN cd /tmp
 RUN pwd 
 # RUN mkdir /app 
 # WORKDIR /app 
